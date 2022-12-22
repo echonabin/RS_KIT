@@ -14,13 +14,13 @@ const manifest: chrome.runtime.ManifestV3 = {
   icons: {
     "128": "device_128.png",
   },
-  content_scripts: [
-    {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
-      js: ["src/pages/content/index.js"],
-      css: ["assets/css/contentStyle.chunk.css"],
-    },
-  ],
+  // content_scripts: [
+  //   {
+  //     matches: ["http://*/*", "https://*/*", "<all_urls>"],
+  //     js: ["src/pages/content/index.js"],
+  //     css: ["assets/css/contentStyle.chunk.css"],
+  //   },
+  // ],
   devtools_page: "src/pages/devtools/index.html",
   web_accessible_resources: [
     {

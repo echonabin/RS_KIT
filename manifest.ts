@@ -22,6 +22,7 @@ const manifest: chrome.runtime.ManifestV3 = {
   //   },
   // ],
   devtools_page: "src/pages/devtools/index.html",
+  permissions: ["tabs", "contextMenus"],
   web_accessible_resources: [
     {
       resources: [

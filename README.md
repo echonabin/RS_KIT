@@ -1,4 +1,3 @@
-<div align="center">
 <img src="public/device_128.png" alt="logo"/>
 <h1> Chrome Extension with<br/>React + Vite + TypeScript</h1>
 

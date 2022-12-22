@@ -1,17 +1,11 @@
 <div align="center">
 <img src="public/icon-128.png" alt="logo"/>
-<h1> Chrome Extension Boilerplate with<br/>React + Vite + TypeScript</h1>
+<h1> Chrome Extension with<br/>React + Vite + TypeScript</h1>
 
 ## Table of Contents
 
 - [Intro](#intro)
 - [Installation](#installation)
-
-## Intro <a name="intro"></a>
-
-This boilerplate is made for creating chrome extensions using React and Typescript.
-
-> The focus was on improving the build speed and development experience with Vite.
 
 ## Installation <a name="installation"></a>
 

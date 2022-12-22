@@ -2,20 +2,17 @@ import packageJson from "./package.json";
 
 const manifest: chrome.runtime.ManifestV3 = {
   manifest_version: 3,
-  name: packageJson.name,
+  name: "Rs Kit",
   version: packageJson.version,
   description: packageJson.description,
   options_page: "src/pages/options/index.html",
   background: { service_worker: "src/pages/background/index.js" },
   action: {
     default_popup: "src/pages/popup/index.html",
-    default_icon: "icon-34.png",
-  },
-  chrome_url_overrides: {
-    newtab: "src/pages/newtab/index.html",
+    default_icon: "device_32.png",
   },
   icons: {
-    "128": "icon-128.png",
+    "128": "device_128.png",
   },
   content_scripts: [
     {
@@ -30,8 +27,8 @@ const manifest: chrome.runtime.ManifestV3 = {
       resources: [
         "assets/js/*.js",
         "assets/css/*.css",
-        "icon-128.png",
-        "icon-34.png",
+        "device_128.png",
+        "device_32.png",
       ],
       matches: ["*://*/*"],
     },

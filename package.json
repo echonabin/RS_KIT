@@ -1,7 +1,7 @@
 {
   "name": "RS_KIT",
   "version": "0.0.1",
-  "description": "Chrome extension for simple multi view devtool.",
+  "description": "With this extension one can see their webpage on 425px, 768px, 1080px, 1440px etc in singlepage.",
   "license": "MIT",
   "scripts": {
     "build": "tsc --noEmit && vite build",

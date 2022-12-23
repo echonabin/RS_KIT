@@ -2,9 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "@pages/popup/index.css";
 import App from "@src/pages/remote/App";
-import refreshOnUpdate from "virtual:reload-on-update-in-view";
+import refreshOnUpdate from "virtual:reload-on-update-in-background-script";
 
-refreshOnUpdate("pages/popup");
+refreshOnUpdate("pages/remote");
 
 function init() {
   const appContainer = document.querySelector("#app-container");

@@ -11,6 +11,7 @@ const Popup = () => {
       url: "https://google.com",
     });
   };
+
   return (
     <div className="bg-teal-200 flex flex-col items-center w-full h-screen py-3 px-3 shadow">
       <h1>Welcome to Rs kit.</h1>

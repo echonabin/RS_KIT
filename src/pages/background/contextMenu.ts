@@ -24,5 +24,18 @@ export function removeMenu() {
 }
 
 chrome.contextMenus.onClicked.addListener(({ menuItemId }) => {
-  openDevToolsWindow(menuItemId);
+  async function getCurrentTab() {
+    let queryOptions = { active: true, lastFocusedWindow: true };
+    let [tab] = await chrome.tabs.query(queryOptions);
+    return tab;
+  }
+  getCurrentTab().then((res) => {
+    chrome.windows.create({
+      type: "popup",
+      width: 850,
+      height: 600,
+      focused: true,
+      url: res.url,
+    });
+  });
 });

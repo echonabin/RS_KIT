@@ -1,7 +1,7 @@
 import openDevToolsWindow from "./openWindow";
 
 export function createMenu() {
-  const menus = [{ id: "devtools-remote", title: "Open Remote DevTools" }];
+  const menus = [{ id: "devtools-remote", title: "Rs devkit" }];
 
   let shortcuts = {};
   chrome.commands.getAll((commands) => {
@@ -29,13 +29,20 @@ chrome.contextMenus.onClicked.addListener(({ menuItemId }) => {
     let [tab] = await chrome.tabs.query(queryOptions);
     return tab;
   }
-  getCurrentTab().then((res) => {
-    chrome.windows.create({
-      type: "popup",
-      width: 850,
-      height: 600,
-      focused: true,
-      url: res.url,
-    });
+  chrome.windows.create({
+    type: "popup",
+    width: 850,
+    height: 600,
+    focused: true,
+    url: "/src/pages/remote/index.html",
   });
+  // getCurrentTab().then((res) => {
+  //   chrome.windows.create({
+  //     type: "popup",
+  //     width: 850,
+  //     height: 600,
+  //     focused: true,
+  //     url: res.url,
+  //   });
+  // });
 });

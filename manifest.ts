@@ -14,6 +14,11 @@ const manifest: chrome.runtime.ManifestV3 = {
   icons: {
     "128": "device_128.png",
   },
+  commands: {
+    "rskit-remote": {
+      description: "Remote DevTools",
+    },
+  },
   // content_scripts: [
   //   {
   //     matches: ["http://*/*", "https://*/*", "<all_urls>"],

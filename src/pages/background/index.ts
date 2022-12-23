@@ -1,5 +1,9 @@
-import reloadOnUpdate from "virtual:reload-on-update-in-background-script";
+import openDevToolsWindow from "./openWindow";
+import { createMenu } from "./contextMenu";
 
-reloadOnUpdate("pages/background");
+// Listen for keyboard shortcuts
+chrome.commands.onCommand.addListener((shortcut) => {
+  openDevToolsWindow(shortcut);
+});
 
-console.log("background loaded");
+createMenu();

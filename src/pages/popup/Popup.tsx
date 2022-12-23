@@ -3,7 +3,13 @@ import "@pages/popup/Popup.css";
 
 const Popup = () => {
   const openOptionHandler = () => {
-    chrome.runtime.openOptionsPage();
+    chrome.windows.create({
+      type: "popup",
+      width: 850,
+      height: 600,
+      focused: true,
+      url: "https://google.com",
+    });
   };
   return (
     <div className="bg-teal-200 flex flex-col items-center w-full h-screen py-3 px-3 shadow">

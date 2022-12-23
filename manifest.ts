@@ -19,13 +19,13 @@ const manifest: chrome.runtime.ManifestV3 = {
       description: "Remote DevTools",
     },
   },
-  // content_scripts: [
-  //   {
-  //     matches: ["http://*/*", "https://*/*", "<all_urls>"],
-  //     js: ["src/pages/content/index.js"],
-  //     css: ["assets/css/contentStyle.chunk.css"],
-  //   },
-  // ],
+  content_scripts: [
+    {
+      matches: ["http://*/*", "https://*/*", "<all_urls>"],
+      js: ["src/pages/content/index.js"],
+      css: ["assets/css/contentStyle.chunk.css"],
+    },
+  ],
   devtools_page: "src/pages/devtools/index.html",
   permissions: ["tabs", "contextMenus"],
   web_accessible_resources: [

@@ -7,10 +7,7 @@ const manifest: chrome.runtime.ManifestV3 = {
   description: packageJson.description,
   options_page: "src/pages/options/index.html",
   background: { service_worker: "src/pages/background/index.js" },
-  action: {
-    default_popup: "src/pages/popup/index.html",
-    default_icon: "device_32.png",
-  },
+  action: {},
   icons: {
     "128": "device_128.png",
   },

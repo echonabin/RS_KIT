@@ -1,10 +1,13 @@
-import { useEffect } from "react";
 export default function App() {
-  useEffect(() => {
-    console.log("content view loaded");
-  }, []);
-
   return (
-    <div className="w-screen h-screen bg-blue-300 text-white">content view</div>
+    <div className="w-full h-full bg-green-400 flex justify-center items-center">
+      <div className="w-[600px] h-[800px]">
+        <iframe
+          src={window.location.href}
+          className="w-full h-full"
+          frameBorder="0"
+        ></iframe>
+      </div>
+    </div>
   );
 }

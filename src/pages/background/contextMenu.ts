@@ -1,7 +1,10 @@
 import openDevToolsWindow from "./openWindow";
 
 export function createMenu() {
-  const menus = [{ id: "devtools-remote", title: "Rs devkit" }];
+  const menus = [
+    { id: "open-rs-kit", title: "Open Rskit here" },
+    { id: "devtools-remote", title: "Rs devkit" },
+  ];
 
   let shortcuts = {};
   chrome.commands.getAll((commands) => {
@@ -24,25 +27,18 @@ export function removeMenu() {
 }
 
 chrome.contextMenus.onClicked.addListener(({ menuItemId }) => {
-  async function getCurrentTab() {
-    let queryOptions = { active: true, lastFocusedWindow: true };
-    let [tab] = await chrome.tabs.query(queryOptions);
-    return tab;
+  if (menuItemId === "devtools-remote") {
+    chrome.windows.create({
+      type: "popup",
+      width: 850,
+      height: 600,
+      focused: true,
+      url: "/src/pages/remote/index.html",
+    });
+  } else if (menuItemId === "open-rs-kit") {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const activeTab = tabs[0];
+      chrome.tabs.sendMessage(activeTab.id, { message: "open-rs-kit" });
+    });
   }
-  chrome.windows.create({
-    type: "popup",
-    width: 850,
-    height: 600,
-    focused: true,
-    url: "/src/pages/remote/index.html",
-  });
-  // getCurrentTab().then((res) => {
-  //   chrome.windows.create({
-  //     type: "popup",
-  //     width: 850,
-  //     height: 600,
-  //     focused: true,
-  //     url: res.url,
-  //   });
-  // });
 });
